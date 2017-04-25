@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %} English News {% endblock %}
+
+{% block content %}
+<a href="{{ url_for('hindinews') }}">Read Hindi News</a>
+
+	<ul>
+	{% for hlines in headlines[2:] %}
+
+	<dl>
+		<dt>{{ hlines.text }}</dt><br>
+		<dd>{{ news[loop.index].text }}</dd>
+	</dl>
+	<hr>
+
+	{% endfor %}
+	</ul>
+
+{% endblock %}
